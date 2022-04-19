@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+from .views import RegisterView
+
+
+
 urlpatterns = [
-    path('', views.signupUser),
+    path('', RegisterView.as_view()),
 ]
