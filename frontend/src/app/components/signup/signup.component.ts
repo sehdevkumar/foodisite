@@ -43,8 +43,10 @@ export class SignupComponent implements OnInit {
         },
         (_error: HttpErrorResponse) => {
           this.isAccountCreated = false;
-
-          this.errorMessage = 'My username or email is Already Exists! , May Email is Invalid';
+          if (_error.status === 400) {
+            this.errorMessage = 'Invalid Fields!';
+          } else if (_error.status === 409)
+            this.errorMessage = 'Fields Are Already Exists!';
         }
       );
   }

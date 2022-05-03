@@ -3,7 +3,8 @@ from functools import partial
 # Create your views here.
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK, HTTP_409_CONFLICT, HTTP_201_CREATED
+from rest_framework.status import HTTP_200_OK, HTTP_409_CONFLICT, HTTP_201_CREATED, HTTP_400_BAD_REQUEST
+
 from django.contrib.auth.models import User
 from .serializer import UserRegisterSerializer
 
@@ -38,4 +39,5 @@ class RegisterView(APIView):
             if emailExists or usernasmeExists:
                 return Response(serializer.errors, status=HTTP_409_CONFLICT)
 
-            return Response(serializer.errors, status=HTTP_409_CONFLICT)
+            return Response(serializer.errors, status=HTTP_400_BAD_REQUEST
+                            )
