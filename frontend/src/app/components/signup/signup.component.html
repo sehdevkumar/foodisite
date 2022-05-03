@@ -1,0 +1,38 @@
+<div class="login-container">
+  <div style="color: #fff; font-size: 24px">Create User</div>
+  <form [formGroup]="userForm" style="margin-top: 24px">
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        type="text"
+        required
+        placeholder="name"
+        formControlName="name"
+        autocomplete="off"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        type="email"
+        required
+        placeholder="email"
+        formControlName="email"
+        autocomplete="off"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        type="password"
+        required
+        placeholder="*****"
+        formControlName="password"
+        autocomplete="off"
+        maxlength="20"
+
+      />
+    </mat-form-field>
+    <button mat-button class="custom-btn" (click)="onSubmit()"  [class.no-ptr]="!userForm.valid" >Signup</button>
+  </form>
+</div>

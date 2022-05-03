@@ -1,0 +1,69 @@
+.login-container {
+  background: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  form {
+    box-sizing: border-box;
+    box-shadow: 1px -1px 3px 4px rgba(207, 199, 199, 0.2);
+    height: 50%;
+    /* property: calc(expression) */
+    width: fit-content;
+    border-radius: 8px;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .mat-form-field {
+      width: calc(100% + 0px);
+
+      .matinput {
+        width: 100%;
+      }
+    }
+
+  }
+}
+::ng-deep .mat-form-field {
+  input {
+    padding: 15px;
+    border-radius: 0.45rem;
+    font-family: Times, "Times New Roman", Georgia, serif;
+    font-size: 16px;
+  }
+  .mat-input-element {
+    color: slategray;
+  }
+  .mat-form-field-label {
+    color: slategray;
+  }
+  .mat-form-field-underline {
+    background-color: slategray;
+  }
+  .mat-form-field-ripple {
+    background-color: #040b14;
+  }
+  .mat-form-field-required-marker {
+    color: slategray;
+  }
+}
+
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label {
+    color: #040b14;
+  }
+  .mat-form-field-ripple {
+    background-color: #040b14;
+  }
+  .mat-form-field-required-marker {
+    color: #040b14;
+  }
+  .mat-input-element {
+    color: #040b14;
+  }
+}
