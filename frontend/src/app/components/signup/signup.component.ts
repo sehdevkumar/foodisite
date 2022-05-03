@@ -38,10 +38,13 @@ export class SignupComponent implements OnInit {
       .request('post', 'http://127.0.0.1:8000/signup/', { params: param })
       ?.subscribe(
         (_res) => {
+          this.isAccountCreated = true;
           console.log(_res);
         },
         (_error: HttpErrorResponse) => {
-          console.log(_error.status);
+          this.isAccountCreated = false;
+
+          this.errorMessage = 'My username or email is Already Exists! , May Email is Invalid';
         }
       );
   }

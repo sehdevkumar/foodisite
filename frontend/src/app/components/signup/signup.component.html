@@ -1,4 +1,10 @@
 <div class="login-container">
+  <div
+    *ngIf="!isAccountCreated"
+    style="color: rgba(255, 0, 0, 0.812); margin-bottom: 5px;font-size:20px;"
+  >
+    {{ errorMessage }}
+  </div>
   <div style="color: #fff; font-size: 24px">Create User</div>
   <form [formGroup]="userForm" style="margin-top: 24px">
     <mat-form-field appearance="fill">
@@ -30,9 +36,16 @@
         formControlName="password"
         autocomplete="off"
         maxlength="20"
-
       />
     </mat-form-field>
-    <button mat-button class="custom-btn" (click)="onSubmit()"  [class.no-ptr]="!userForm.valid" >Signup</button>
+
+    <button
+      mat-button
+      class="custom-btn"
+      (click)="onSubmit()"
+      [class.no-ptr]="!userForm.valid"
+    >
+      Signup
+    </button>
   </form>
 </div>
